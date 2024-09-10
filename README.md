@@ -1,6 +1,6 @@
 # Kết Nối IoT2050 Với S7-1200
 
-Bài viết hướng dẫn cách kết nối bộ IOT Gateway **Siemens IoT2050** với PLC **Siemens S7-1200** thông qua giao thức **OPC UA** hoặc **S7 Connector**. 
+Bài viết hướng dẫn cách kết nối bộ IOT Gateway **Siemens IoT2050** với PLC **Siemens S7-1200** thông qua giao thức **S7 Connector**. 
 
 ## Mục Lục
 
@@ -24,26 +24,13 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
 
 ## Cấu Hình IoT2050
 
-1. **Cài Đặt Node-RED:**
-   - Truy cập IoT2050 thông qua SSH.
-   - Cài đặt Node-RED bằng lệnh:
+1. **Cài Đặt OS dựa trên Image có sẵn:**
+    https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-VN
+![image](https://github.com/user-attachments/assets/196336ea-ceb6-4996-b5cd-a1c718a607a3)
+2. **Thiết lập kết nối Internet:**
+   - Test kết nối Internet:
      ```bash
-     sudo apt update
-     sudo apt install -y nodejs npm
-     sudo npm install -g --unsafe-perm node-red
-     ```
-   - Khởi động Node-RED:
-     ```bash
-     node-red-start
-     ```
-   - Truy cập Node-RED từ trình duyệt: `http://<ip_address>:1880`.
-
-2. **Cài Đặt MQTT:**
-   - Cài đặt MQTT Broker (Mosquitto):
-     ```bash
-     sudo apt install mosquitto mosquitto-clients
-     sudo systemctl enable mosquitto
-     sudo systemctl start mosquitto
+     ping 8.8.8.8
      ```
 
 ## Cấu Hình S7-1200
