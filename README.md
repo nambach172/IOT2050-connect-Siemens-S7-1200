@@ -58,7 +58,7 @@ GET để nhận dữ liệu
 3. **Absolute Address:**
    - Chuột phải vào DB muốn truy cập để lấy địa chỉ tuyệt đối, bỏ chọn Optimize Block Access :
       ![image](https://github.com/user-attachments/assets/0cb7b3b4-0545-4dc4-902a-43a4d1e0c263)
-   - Sau khi Compile Project, địa chỉ tuyệt đối sẽ xuất hiện, format được nhắc đến ở mục #datatype :
+   - Sau khi Compile Project, địa chỉ tuyệt đối sẽ xuất hiện, format được nhắc đến ở mục ##datatype :
      ![image](https://github.com/user-attachments/assets/d11d0cc9-f43b-4c8f-b6e1-81e25ca32886)
 
 
