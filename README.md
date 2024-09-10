@@ -51,7 +51,7 @@ GET để nhận dữ liệu
      ![image](https://github.com/user-attachments/assets/d5ec8003-9f66-4e13-a00c-6ef8b7948ec7)
 
    - Việc này cho phép các thiết bị khác có thể truy xuất data từ CPU S7-1200/1500 , ở bài viết này IoT2050 đóng vai trò là client và CPU S7-1200/1500 đóng vai trò là server
-2. **Data type:** #2-datatype
+2. **Data type:** (#2-datatype)
    Data maping có thể xem ở trang thư viện S7 connector trên website của Node-red : https://flows.nodered.org/node/node-red-contrib-s7
    Đối với các giá trị được sắp xếp theo Data Block trong Program Block, chúng ta cần phải thiết lập để xem được địa chỉ tuyệt đối ( Absolute Address) của giá trị
 
