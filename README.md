@@ -70,7 +70,7 @@ GET để nhận dữ liệu
      ```bash
      npm install node-red-contrib-s7 
      ```
-   - Từ giao diện node-red kéo thả node “s7 in” vào trang project để thiết lập kết nối với PLC S7-1200:
+   - Từ giao diện node-red kéo thả node “s7 in” vào trang project để thiết lập kết nối với PLC S7-1200, điền các trường thông tin như IP của PLC, rack, slot, tên biến : 
      ![image](https://github.com/user-attachments/assets/c145b4b9-4ece-4bee-ab18-c58d5915b692)
 
      ![image](https://github.com/user-attachments/assets/0b6bccd1-f0d1-49c6-86ea-ad0c75b9387d)
@@ -84,9 +84,9 @@ GET để nhận dữ liệu
     **Lưu ý** : với **S7-1200/1500**, rack 0 và slot 1
                      **S7-300/400** , rack 0 và slot 2
 
-3. **Kết Nối Qua MQTT:**
-   - Cấu hình Node-RED để nhận/gửi dữ liệu qua MQTT từ IoT2050.
-   - Kết nối MQTT với PLC thông qua IoT Gateway trên IoT2050.
+3. **Read Data:**
+     Để hiển thị data vào ô Debug, chúng ta cần phải kéo thả thêm node "msg" , các giá trị sẽ được hiển thị ở tab Debug :
+     ![image](https://github.com/user-attachments/assets/323822a2-48c0-4eb2-9a89-dd73c08189b1)
 
 ## Chạy Chương Trình
 
