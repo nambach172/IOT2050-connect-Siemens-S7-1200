@@ -1,4 +1,4 @@
-# Kết Nối IoT2050 Với S7-1200
+# Kết Nối IoT2050 Với PLC S7 Series
 
 Bài viết hướng dẫn cách kết nối bộ IOT Gateway **Siemens IoT2050** với PLC **Siemens S7-1200** thông qua giao thức **S7 Connector**. 
 
@@ -18,12 +18,10 @@ Bài viết hướng dẫn cách kết nối bộ IOT Gateway **Siemens IoT2050*
 
 Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ các yêu cầu sau:
 
-- Bộ điều khiển **Siemens IoT2050** 
-- PLC **Siemens S7-1200** : S7/1200,S7/1500 Series 
+- IoT Gateway **Siemens IoT2050** 
+- PLC **Siemens S7-1200** : S7-300/400/1200,S7/1500 
 - **TIA Portal** : phần mềm lập trình cho PLC
 - Kiến thức cơ bản **Node-RED** hoặc **MQTT** cho truyền thông IoT 
-- **OPC UA Server** hoặc giao thức **Profinet** cho việc trao đổi dữ liệu
-- **Python** nếu sử dụng lập trình với MQTT
 
 ## Cấu Hình IoT2050
 
@@ -44,7 +42,7 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
 ## Cấu Hình S7-1200
 
    1. **PUT/GET config:**
-   Với giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua PROFINET và Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
+   Với giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua PROFINET và Ethernet công nghiệp của các CPU S7 Series. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
 PUT để gửi dữ liệu
 GET để nhận dữ liệu
    - Từ giao diện TIA Portal, vào mục Properties --> Protection & Security --> Connection Mechanism của CPU S7-1200/1500, chọn Permiss access with Put/Get communication from remote Partner : 
@@ -64,22 +62,20 @@ GET để nhận dữ liệu
 
 
 
-## Lập Trình Kết Nối
+## Cấu Hình Kết Nối
 
-1. **Kết Nối Qua OPC UA:**
-   - Sử dụng Python với thư viện `opcua`:
+1. **Node-Red:**
+   - Ở Command Line Putty, gõ Node-red để truy cập vào giao diện Node-red 
+   -  Gõ lệnh sau để có thể tải thư viện S7 connector : 
      ```bash
-     pip install opcua
+     npm install node-red-contrib-s7 
      ```
-   - Mẫu mã Python kết nối với OPC UA Server:
-     ```python
-     from opcua import Client
+   - Từ giao diện node-red kéo thả node “s7 in” vào trang project để thiết lập kết nối với PLC S7-1200:
+     ![image](https://github.com/user-attachments/assets/c145b4b9-4ece-4bee-ab18-c58d5915b692)
 
-     client = Client("opc.tcp://<PLC_IP>:4840")
-     client.connect()
-     root = client.get_root_node()
-     print("Các node OPC UA:", root)
-     ```
+     ![image](https://github.com/user-attachments/assets/0b6bccd1-f0d1-49c6-86ea-ad0c75b9387d)
+   **Lưu ý** : với S7-1200/1500, rack 0 và slot 1
+                   S7-300/400 , rack 0 và slot 2
 
 2. **Kết Nối Qua MQTT:**
    - Cấu hình Node-RED để nhận/gửi dữ liệu qua MQTT từ IoT2050.
