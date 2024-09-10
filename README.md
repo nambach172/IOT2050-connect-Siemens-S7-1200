@@ -81,8 +81,8 @@ GET để nhận dữ liệu
 
 
 
-    **Lưu ý** : với S7-1200/1500, rack 0 và slot 1
-                   S7-300/400 , rack 0 và slot 2
+    **Lưu ý** : với **S7-1200/1500**, rack 0 và slot 1
+                     **S7-300/400** , rack 0 và slot 2
 
 3. **Kết Nối Qua MQTT:**
    - Cấu hình Node-RED để nhận/gửi dữ liệu qua MQTT từ IoT2050.
