@@ -37,7 +37,6 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
      ```bash
      ping 8.8.8.8
      ```
-     ![image](https://github.com/user-attachments/assets/6173aca5-58b7-4afb-870a-bd05823498f3)
    Putty : https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 3. **SSH Access:**
    ![image](https://github.com/user-attachments/assets/4740c7a1-2148-46d5-8cb7-03eaec6d97c4)
@@ -46,13 +45,12 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
 
 1. **PUT/GET config:**
 
-Bạn có thể sử dụng giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua giao diện PROFINET tích hợp và giao diện Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
-
+Với giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua PROFINET và Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
 PUT để gửi dữ liệu
 GET để nhận dữ liệu
-   - Truy cập TIA Portal và tạo project mới.
-   - Thêm PLC **S7-1200** vào project.
-   - .
+   - Từ giao diện TIA Portal, vào mục Properties --> Protection & Security --> Connection Mechanism của CPU S7-1200/1500, chọn Permiss access with Put/Get communication from remote Partner : 
+     ![image](https://github.com/user-attachments/assets/d5ec8003-9f66-4e13-a00c-6ef8b7948ec7)
+
    - Định nghĩa các tag mà bạn muốn chia sẻ qua OPC UA.
 
 2. **Get Absolute Address:**
