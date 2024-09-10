@@ -2,6 +2,9 @@
 
 Bài viết hướng dẫn cách kết nối bộ IOT Gateway **Siemens IoT2050** với PLC **Siemens S7-1200** thông qua giao thức **S7 Connector**. 
 
+![image](https://github.com/user-attachments/assets/8c0e4e1f-a46d-4040-8f82-260dc972bcca)
+
+
 ## Mục Lục
 
 - [Yêu Cầu](#yêu-cầu)
@@ -28,20 +31,31 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
     https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-VN
 ![image](https://github.com/user-attachments/assets/196336ea-ceb6-4996-b5cd-a1c718a607a3)
 2. **Thiết lập kết nối Internet:**
+   ![image](https://github.com/user-attachments/assets/ac3a0116-8523-453f-8bf7-cbf60892f1ce)
+
    - Test kết nối Internet:
      ```bash
      ping 8.8.8.8
      ```
+     ![image](https://github.com/user-attachments/assets/6173aca5-58b7-4afb-870a-bd05823498f3)
+   Putty : https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+3. **SSH Access:**
+   ![image](https://github.com/user-attachments/assets/4740c7a1-2148-46d5-8cb7-03eaec6d97c4)
 
 ## Cấu Hình S7-1200
 
-1. **Cấu Hình Kết Nối OPC UA:**
+1. **PUT/GET config:**
+
+Bạn có thể sử dụng giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua giao diện PROFINET tích hợp và giao diện Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
+
+PUT để gửi dữ liệu
+GET để nhận dữ liệu
    - Truy cập TIA Portal và tạo project mới.
    - Thêm PLC **S7-1200** vào project.
-   - Bật chế độ OPC UA Server trên PLC.
+   - .
    - Định nghĩa các tag mà bạn muốn chia sẻ qua OPC UA.
 
-2. **Cấu Hình Profinet:**
+2. **Get Absolute Address:**
    - Nếu bạn sử dụng Profinet, hãy cấu hình kết nối mạng Profinet giữa S7-1200 và IoT2050.
    - Sử dụng TIA Portal để gán địa chỉ IP và định cấu hình các I/O.
 
