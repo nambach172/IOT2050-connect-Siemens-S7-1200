@@ -44,18 +44,24 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
 ## Cấu Hình S7-1200
 
 1. **PUT/GET config:**
-
-Với giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua PROFINET và Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
+   Với giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua PROFINET và Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
 PUT để gửi dữ liệu
 GET để nhận dữ liệu
    - Từ giao diện TIA Portal, vào mục Properties --> Protection & Security --> Connection Mechanism của CPU S7-1200/1500, chọn Permiss access with Put/Get communication from remote Partner : 
      ![image](https://github.com/user-attachments/assets/d5ec8003-9f66-4e13-a00c-6ef8b7948ec7)
 
-   - Định nghĩa các tag mà bạn muốn chia sẻ qua OPC UA.
+   - Việc này cho phép các thiết bị khác có thể truy xuất data từ CPU S7-1200/1500 , ở bài viết này IoT2050 đóng vai trò là client và CPU S7-1200/1500 đóng vai trò là server
+2. **Data type:** #datatype
+   Data maping có thể xem ở trang thư viện S7 connector trên website của Node-red : https://flows.nodered.org/node/node-red-contrib-s7
+   Đối với các giá trị được sắp xếp theo Data Block trong Program Block, chúng ta cần phải thiết lập để xem được địa chỉ tuyệt đối ( Absolute Address) của giá trị
 
-2. **Get Absolute Address:**
-   - Nếu bạn sử dụng Profinet, hãy cấu hình kết nối mạng Profinet giữa S7-1200 và IoT2050.
-   - Sử dụng TIA Portal để gán địa chỉ IP và định cấu hình các I/O.
+3. **Absolute Address:**
+   - Chuột phải vào DB muốn truy cập để lấy địa chỉ tuyệt đối, bỏ chọn Optimize Block Access :
+      ![image](https://github.com/user-attachments/assets/0cb7b3b4-0545-4dc4-902a-43a4d1e0c263)
+   - Sau khi Compile Project, địa chỉ tuyệt đối sẽ xuất hiện, format được nhắc đến ở mục #datatype :
+     ![image](https://github.com/user-attachments/assets/d11d0cc9-f43b-4c8f-b6e1-81e25ca32886)
+
+
 
 ## Lập Trình Kết Nối
 
