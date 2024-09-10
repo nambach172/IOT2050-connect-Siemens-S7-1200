@@ -43,7 +43,7 @@ Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ cá
 
 ## Cấu Hình S7-1200
 
-1. **PUT/GET config:**
+   1. **PUT/GET config:**
    Với giao thức truyền thông S7, ví dụ như để truyền dữ liệu qua PROFINET và Ethernet công nghiệp của các CPU S7-1500 và S7-1200. Các lệnh sau đây có sẵn cho giao thức truyền thông S7:
 PUT để gửi dữ liệu
 GET để nhận dữ liệu
@@ -51,14 +51,14 @@ GET để nhận dữ liệu
      ![image](https://github.com/user-attachments/assets/d5ec8003-9f66-4e13-a00c-6ef8b7948ec7)
 
    - Việc này cho phép các thiết bị khác có thể truy xuất data từ CPU S7-1200/1500 , ở bài viết này IoT2050 đóng vai trò là client và CPU S7-1200/1500 đóng vai trò là server
-2. **Data type:** (#2-datatype)
+## 2. **Data type:** 
    Data maping có thể xem ở trang thư viện S7 connector trên website của Node-red : https://flows.nodered.org/node/node-red-contrib-s7
    Đối với các giá trị được sắp xếp theo Data Block trong Program Block, chúng ta cần phải thiết lập để xem được địa chỉ tuyệt đối ( Absolute Address) của giá trị
 
-3. **Absolute Address:**
+   3. **Absolute Address:**
    - Chuột phải vào DB muốn truy cập để lấy địa chỉ tuyệt đối, bỏ chọn Optimize Block Access :
       ![image](https://github.com/user-attachments/assets/0cb7b3b4-0545-4dc4-902a-43a4d1e0c263)
-   - Sau khi Compile Project, địa chỉ tuyệt đối sẽ xuất hiện, format được nhắc đến ở mục ##datatype :
+   - Sau khi Compile Project, địa chỉ tuyệt đối sẽ xuất hiện, format được nhắc đến ở mục #2-data-type :
      ![image](https://github.com/user-attachments/assets/d11d0cc9-f43b-4c8f-b6e1-81e25ca32886)
 
 
