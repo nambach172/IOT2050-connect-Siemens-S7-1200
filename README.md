@@ -15,9 +15,6 @@ Bài viết hướng dẫn cách kết nối bộ IOT Gateway **Siemens IoT2050*
 - [Hỗ Trợ](#hỗ-trợ)
 
 ## Yêu Cầu
-
-Trước khi bắt đầu, đảm bảo bạn đã chuẩn bị đầy đủ các yêu cầu sau:
-
 - IoT Gateway **Siemens IoT2050** 
 - PLC **Siemens S7-1200** : S7-300/400/1200,S7/1500 
 - **TIA Portal** : phần mềm lập trình cho PLC
